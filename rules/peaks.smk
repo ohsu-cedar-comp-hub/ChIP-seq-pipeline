@@ -17,7 +17,8 @@ rule call_peaks:
         case = "samples/bed/{sample}.bed",
         control = get_control
     output:
-        "results/motifs/{sample}/homerResults.html"
+        "results/motifs/{sample}/homerResults.html",
+        "results/macs2/{sample}/{sample}.macsPeaks.bed"
     params:
         assembly = config["assembly"],
         peak = get_peak

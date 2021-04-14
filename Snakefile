@@ -60,7 +60,8 @@ rule all:
         expand("samples/bigBed/{sample}.all.bb", sample = CASES),
         expand("samples/bigBed/{sample}.all.bb", sample = CONTROLS),
         expand("samples/bigwig/{sample}.bw", sample = SAMPLES),
-        expand("results/motifs/{sample}/homerResults.html", sample = CASES)
+        expand("results/motifs/{sample}/homerResults.html", sample = CASES),
+	expand("results/macs2/{sample}/{sample}.macsPeaks.bed", sample = CASES)
 
 include: "rules/align.smk"
 include: "rules/peaks.smk"
